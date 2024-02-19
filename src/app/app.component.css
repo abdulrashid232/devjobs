@@ -11,7 +11,7 @@
   --gray:#9DAEC2;
   --dark-gray:#6E8098;
 }
-
+/* Header */
 header{
   background-image: url('../assets/desktop/bg-pattern-header.svg');
   height: 160px;
@@ -23,6 +23,6 @@ header{
   justify-content: space-around;
   align-items: center;
   padding: 0 20px;
+  margin: auto 10rem;
   height: 100%;
-  /* width: 70%; */
 }
