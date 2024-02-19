@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  /* Primary colors */
+  --violet:#4C54D2;
+  --light-violet:#939BF4;
+  --primary-color-darkBlue:#19202D;
+  --midnight : #121721;
+
+  /* Secondary colors */
+  --secondary-color1:#FFFFFF;
+  --light-gray:#F4F6F8;
+  --gray:#9DAEC2;
+  --dark-gray:#6E8098;
+
+  /* font */
+  --font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+body{
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: var(--light-gray);
+
+  
+}
