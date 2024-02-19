@@ -18,9 +18,6 @@
   border: none;
   outline: none;
 }
-/* .search-container input:focus{
-  border: none;
-} */
 .input-cont{
   display: flex;
   align-items: center;
