@@ -13,8 +13,7 @@ import { JobComponent } from './jobs/job/job.component';
     JobsComponent,
     JobComponent
   ],
-  imports: [
-    BrowserModule
+  imports: [ BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

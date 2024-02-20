@@ -8,6 +8,8 @@ import { Component,OnInit } from '@angular/core';
 export class JobsComponent implements OnInit{
   jobs:any; 
 
+  id: number;
+
   constructor() { }
 
   ngOnInit() {
@@ -28,5 +30,14 @@ export class JobsComponent implements OnInit{
     .catch(error => {
       console.error('Error While fetching data:', error);
     });
+  }
+
+  showJobDetails(id: number) {
+    this.id = id;
+    const job = this.jobs.find((job: any) => job.id === this.id);
+    // if (this.id === job.id) {
+    //   console.log(this.id);
+    // }
+    console.log(job.id);
   }
 }
