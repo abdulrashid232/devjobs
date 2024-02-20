@@ -1,20 +1,20 @@
-<div class="grid-container">
-  <div class="grid-item">
-    <div class="job-logo">
-      <img src="./assets/logos/scoot.svg" alt="">
+  <div class="grid-container">
+  <div class="grid-item" *ngFor ="let job of jobs">
+    <div class="job-logo" [style.backgroundColor]="job.logoBackground">
+      <img src="{{job.logo}}" alt="">
     </div>
     <div class="job-details">
       <div class="job-title">
-        <span>5h ago . Full Time</span>
-        <h3>Senior Frontend Developer</h3>
-        <p class="company">Scoot</p>
+        <span>{{job.postedAt}}. {{job.contract}}</span>
+        <h3>{{job.position}}</h3>
+        <p class="company">{{job.company}}</p>
       </div>
       <div class="job-location">
-        <p>United Kingdom</p>
+        <p>{{job.location}}</p>
       </div>
     </div>
   </div>
-  <div class="grid-item">
+  <!-- <div class="grid-item">
     <div class="job-logo">
       <img src="./assets/logos/scoot.svg" alt="">
     </div>
@@ -89,5 +89,6 @@
         <p>United Kingdom</p>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
+
