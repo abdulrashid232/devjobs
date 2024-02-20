@@ -4,16 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search/search.component';
 import { JobsComponent } from './jobs/jobs.component';
-import { JobComponent } from './jobs/job/job.component';
+import { JobComponent } from './job/job.component';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     SearchBarComponent,
     JobsComponent,
     JobComponent
   ],
-  imports: [ BrowserModule,
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
