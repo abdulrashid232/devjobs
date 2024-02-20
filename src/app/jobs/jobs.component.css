@@ -5,6 +5,7 @@
   gap: 20px 20px;
   margin: 5rem 10rem 0 10rem;
   width: 80%;
+  max-width: 80%;
   height: 100%;
 }
 .grid-item{
@@ -14,12 +15,12 @@
   align-items: start;
   background-color: var(--secondary-color1);
   color: var(--midnight);
-  /* font-size: 1.5rem; */
   font-weight: 700;
   border-radius: 10px;
-  width: 340px;
+  width: 320px;
+  max-width: 340px;
   height: 253px;
-  margin: 3rem 0 0 0;
+  margin: 3rem 0 0 0 ;
   /* padding: 0 0 0 2rem; */
 }
 .job-logo{
@@ -49,4 +50,24 @@
 .job-location p{
   color: var(--violet);
   font-weight: 600;
+}
+/* buttons */
+.btn{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+button{
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background-color: var(--violet);
+  color: var(--secondary-color1);
+  border: none;
+  height: 48px;
+  width: 123px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
 }
