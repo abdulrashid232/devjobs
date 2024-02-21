@@ -1,7 +1,7 @@
   <div *ngIf="!viewJob">
   <app-search-bar></app-search-bar>
   <div class="grid-container">
-    <div class="grid-item" *ngFor ="let job of jobs" (click)="jobDetails()">
+    <div class="grid-item" *ngFor ="let job of jobs" (click)="jobDetails(job)">
       <div class="job-logo" [style.backgroundColor]="job.logoBackground">
         <img src="{{job.logo}}" alt="">
       </div>

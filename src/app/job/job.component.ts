@@ -8,4 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JobComponent {
   @Input() jobs: any;
+
+  selectedJobId: any;
 }

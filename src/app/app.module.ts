@@ -7,6 +7,7 @@ import { JobsComponent } from './jobs/jobs.component';
 import { JobComponent } from './job/job.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Route } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,6 +22,7 @@ import { RouterModule, Route } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
     
   ],
   providers: [],

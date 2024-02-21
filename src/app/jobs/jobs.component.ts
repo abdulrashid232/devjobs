@@ -1,5 +1,6 @@
 import { Component,EventEmitter,OnInit,Output } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-jobs',
@@ -9,29 +10,30 @@ import { Route, Router } from '@angular/router';
 export class JobsComponent implements OnInit{
   
   jobs: any; 
-  // selectedJob: any;
+  selectedJobId : any;
+  
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private dataService: DataService) {}
 
-  ngOnInit() {
-    this.loadJobs();
-  }
+  // ngOnInit() {
+  //   this.loadJobs();
+  // }
 
-  loadJobs() {
-    fetch('./assets/data.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(jobs => {
-      this.jobs = jobs;
-    })
-    .catch(error => {
-      console.error('Error While fetching data:', error);
-    });
-  }
+  // loadJobs() {
+  //   fetch('./assets/data.json')
+  //   .then(response => {
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok');
+  //     }
+  //     return response.json();
+  //   })
+  //   .then(jobs => {
+  //     this.jobs = jobs;
+  //   })
+  //   .catch(error => {
+  //     console.error('Error While fetching data:', error);
+  //   });
+  // }
 
  
 
@@ -41,14 +43,25 @@ export class JobsComponent implements OnInit{
   //   });
   // }
 
+  // data: any;
+
+
+  ngOnInit(): void {
+    this.dataService.fetchData().subscribe((result) => {
+      this.jobs = result;
+    });
+  }
+
 
   
   viewJob = false
+  
   jobDetails( job: any) {
-    // this.selectedJob = job;
-    // this.jobSelected.emit(jobId);
     this.router.navigate(['/job']);
-    this.viewJob = true;  
+    this.viewJob = true;
+    this.selectedJobId = job.id
+
+    console.log(this.selectedJobId);
   };
 
  
