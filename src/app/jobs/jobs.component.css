@@ -53,12 +53,13 @@
 }
 /* buttons */
 .btn{
+  margin-top: 2rem;
  display: flex;
   justify-content: center;
   align-items: center;
 
 }
-button{
+/* .loadButton{
   margin-top: 2rem;
   padding: 10px 20px;
   background-color: var(--violet);
@@ -70,4 +71,4 @@ button{
   font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
-}
+} */

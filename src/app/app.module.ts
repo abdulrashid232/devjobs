@@ -8,6 +8,7 @@ import { JobComponent } from './job/job.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Route } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from './button/button.component';
 
 
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SearchBarComponent,
     JobsComponent,
-    JobComponent
+    JobComponent,
+    ButtonComponent
   ],
 
   imports: [

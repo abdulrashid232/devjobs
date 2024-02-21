@@ -72,16 +72,3 @@
   font-weight: bold;
 }
 
-/* buttons */
-button{
-  padding: 10px 20px;
-  background-color: var(--violet);
-  color: var(--secondary-color1);
-  border: none;
-  height: 48px;
-  width: 123px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 5px;
-}
