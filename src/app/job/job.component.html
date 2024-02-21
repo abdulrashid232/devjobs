@@ -1,15 +1,15 @@
-<div class="container" *ngFor="let job of jobs">
+<div class="container" *ngIf="selectedJob">
   <div class="job-header">
-    <div class="com-logo" [style.backgroundColor]="job.logoBackground">
-      <img src="{{job.logo}}" alt="">
+    <div class="com-logo" [style.backgroundColor]="selectedJob.logoBackground">
+      <img src="{{selectedJob.logo}}" alt="">
     </div>
     <div class="com-details">
       <div class="com-name">
-        <h2>{{job.company}}</h2>
-        <p>{{job.company}}.com</p>
+        <h2>{{selectedJob.company}}</h2>
+        <p>{{selectedJob.company}}.com</p>
       </div>
       <div class="com-website">
-        <button [href]="job.company">Company Site</button>
+        <button [href]="selectedJob.company">Company Site</button>
       </div>
     </div>
   </div>
@@ -17,36 +17,36 @@
   <div class="job-details-container">
     <div class="job-details">
      <div class="job-title">
-          <span>{{job.postedAt}} . {{job.contract}}</span>
-          <h3>{{job.position}}</h3>
-          <p class="job-location">{{job.location}}</p>
+          <span>{{selectedJob.postedAt}} . {{selectedJob.contract}}</span>
+          <h3>{{selectedJob.position}}</h3>
+          <p class="job-location">{{selectedJob.location}}</p>
       </div>
       <button>Apply Now</button>
   </div>
     <div class="job-description">
-        <p>{{job.description}}</p>
+        <p>{{selectedJob.description}}</p>
       </div>
       <div class="requirements">
         <h3>Requirements</h3>
         <p class="content">
-          {{job.requirements.content}}
+          {{selectedJob.requirements.content}}
         </p>
-        <p class="items"> {{job.requirements.items}}</p>
+        <p class="items"> {{selectedJob.requirements.items}}</p>
       </div>
       <div class="role">
         <h3>What you will do</h3>
         <p class="content">
-          {{job.role.content}}
+          {{selectedJob.role.content}}
         </p>
-        <p class="items"> {{job.role.items}}</p>
+        <p class="items"> {{selectedJob.role.items}}</p>
       </div>
     </div>
 </div>
-<div class="footer" *ngFor="let job of jobs">
+<div class="footer" *ngIf="selectedJob">
   <div class="job-footer">
     <div class="com-footer-name">
-      <h3>{{job.position}}</h3>
-      <p>{{job.company }}</p>
+      <h3>{{selectedJob.position}}</h3>
+      <p>{{selectedJob.company }}</p>
     </div>
     <div class="com-footer-website">
       <button>Apply Now</button>
@@ -54,3 +54,12 @@
   </div>
       
   </div>
+
+  <!-- component2.component.html
+
+<!-- <div *ngIf="selectedJob">
+  <h2>{{ selectedJob.name }}</h2>
+  <p>{{ selectedJob.description }}</p>
+</div>
+<div *ngIf="!selectedJob">
+  <h2>No item selected</h2> -->

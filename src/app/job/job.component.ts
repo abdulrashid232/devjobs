@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-job',
@@ -7,7 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './job.component.css'
 })
 export class JobComponent {
-  @Input() jobs: any;
+  jobs: any[];
 
-  selectedJobId: any;
+  constructor(private dataService: DataService) {}
+  selectedJob: any;
+
+  ngOnInit(): void {
+    
+    this.dataService.data$.subscribe((jobs) => {
+      this.jobs = jobs;
+    });
+    this.dataService.selectedJob$.subscribe((job) => {
+      this.selectedJob = job;
+    });
+  }
 }

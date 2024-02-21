@@ -9,9 +9,8 @@ import { DataService } from '../data.service';
 })
 export class JobsComponent implements OnInit{
   
-  jobs: any; 
-  selectedJobId : any;
-  
+  jobs: any[]; 
+  selectedJobId: any;
 
   constructor(private router: Router,private dataService: DataService) {}
 
@@ -50,18 +49,20 @@ export class JobsComponent implements OnInit{
     this.dataService.fetchData().subscribe((result) => {
       this.jobs = result;
     });
+    this.dataService.setData(this.jobs);
   }
 
 
   
   viewJob = false
-  
+
   jobDetails( job: any) {
     this.router.navigate(['/job']);
     this.viewJob = true;
-    this.selectedJobId = job.id
+    // this.selectedJobId = job.id
 
-    console.log(this.selectedJobId);
+    this.dataService.setSelectedJob(job);
+    console.log(this.dataService.selectedJob$);
   };
 
  
