@@ -6,6 +6,7 @@ import { SearchBarComponent } from './search/search.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobComponent } from './job/job.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Route } from '@angular/router';
 
 
 
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

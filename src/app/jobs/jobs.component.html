@@ -1,22 +1,25 @@
+  <div *ngIf="!viewJob">
+  <app-search-bar></app-search-bar>
   <div class="grid-container">
-  <div class="grid-item" *ngFor ="let job of jobs" (click)="showJobDetails()">
-    <div class="job-logo" [style.backgroundColor]="job.logoBackground">
-      <img src="{{job.logo}}" alt="">
-    </div>
-    <div class="job-details">
-      <div class="job-title">
-        <span>{{job.postedAt}}. {{job.contract}}</span>
-        <h3>{{job.position}}</h3>
-        <p class="company">{{job.company}}</p>
+    <div class="grid-item" *ngFor ="let job of jobs" (click)="jobDetails()">
+      <div class="job-logo" [style.backgroundColor]="job.logoBackground">
+        <img src="{{job.logo}}" alt="">
       </div>
-      <div class="job-location">
-        <p>{{job.location}}</p>
+      <div class="job-details">
+        <div class="job-title">
+          <span>{{job.postedAt}}. {{job.contract}}</span>
+          <h3>{{job.position}}</h3>
+          <p class="company">{{job.company}}</p>
+        </div>
+        <div class="job-location">
+          <p>{{job.location}}</p>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 <div class="btn">
   <button>Load More</button>
 </div>
+</div>
 
-<app-job [jobs]="jobs"></app-job>
+<app-job [jobs]="jobs" *ngIf="viewJob"></app-job>

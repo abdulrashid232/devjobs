@@ -1,4 +1,5 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,EventEmitter,OnInit,Output } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-jobs',
@@ -6,11 +7,11 @@ import { Component,OnInit } from '@angular/core';
   styleUrl: './jobs.component.css'
 })
 export class JobsComponent implements OnInit{
-  jobs:any; 
+  
+  jobs: any; 
+  // selectedJob: any;
 
-  id: number;
-
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.loadJobs();
@@ -32,12 +33,23 @@ export class JobsComponent implements OnInit{
     });
   }
 
-  showJobDetails(id: number) {
-    this.id = id;
-    const job = this.jobs.find((job: any) => job.id === this.id);
-    // if (this.id === job.id) {
-    //   console.log(this.id);
-    // }
-    console.log(job.id);
-  }
+ 
+
+  // ngOnInit(): void {
+  //   this.dataService.getData().subscribe((jobs) => {
+  //     this.jobs = jobs;
+  //   });
+  // }
+
+
+  
+  viewJob = false
+  jobDetails( job: any) {
+    // this.selectedJob = job;
+    // this.jobSelected.emit(jobId);
+    this.router.navigate(['/job']);
+    this.viewJob = true;  
+  };
+
+ 
 }

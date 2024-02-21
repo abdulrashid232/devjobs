@@ -1,7 +1,7 @@
 <div class="container" *ngFor="let job of jobs">
   <div class="job-header">
-    <div class="com-logo">
-      <img src="../../../assets/logos/scoot.svg" alt="">
+    <div class="com-logo" [style.backgroundColor]="job.logoBackground">
+      <img src="{{job.logo}}" alt="">
     </div>
     <div class="com-details">
       <div class="com-name">
