@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'devjobs';
   
+  
   constructor(private router:Router) {}
 
   navigateToJobs(): void {

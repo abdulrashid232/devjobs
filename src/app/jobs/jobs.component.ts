@@ -1,4 +1,4 @@
-import { Component,EventEmitter,OnInit,Output } from '@angular/core';
+import { Component,EventEmitter,Input,OnInit,Output } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { DataService } from '../data.service';
 
@@ -10,7 +10,10 @@ import { DataService } from '../data.service';
 export class JobsComponent implements OnInit{
   
   jobs: any[]; 
-  selectedJobId: any;
+  selectedJob: any;
+  visibleJobs: any[];
+  jobsPerPage: number = 12;
+  showLoadMoreButton: boolean = true;
 
   constructor(private router: Router,private dataService: DataService) {}
 
@@ -42,14 +45,14 @@ export class JobsComponent implements OnInit{
   //   });
   // }
 
-  // data: any;
 
 
   ngOnInit(): void {
     this.dataService.fetchData().subscribe((result) => {
       this.jobs = result;
+      this.visibleJobs = this.jobs.slice(0, this.jobsPerPage);
     });
-    this.dataService.setData(this.jobs);
+    // this.dataService.setData(this.jobs);
   }
 
 
@@ -57,13 +60,31 @@ export class JobsComponent implements OnInit{
   viewJob = false
 
   jobDetails( job: any) {
-    this.router.navigate(['/job']);
+    // this.router.navigate(['/job']);
     this.viewJob = true;
-    // this.selectedJobId = job.id
+    this.selectedJob = job;
 
-    this.dataService.setSelectedJob(job);
-    console.log(this.dataService.selectedJob$);
+    console.log(this.selectedJob);
+
+    // this.dataService.setSelectedJob(job);
+    // console.log(this.dataService.selectedJob$);
   };
 
+  loadMore() {
+    const startIndex = this.visibleJobs.length;
+    const remainingJobs = this.jobs.length - startIndex;
+    const endIndex = this.jobsPerPage + remainingJobs;
+
+    console.log('startIndex:', startIndex);
+    console.log('endIndex:', endIndex);
+    
+    if (endIndex <= this.jobs.length) {
+      this.visibleJobs = this.visibleJobs.concat(this.jobs.slice(startIndex, endIndex));
+      console.log('Visible Jobs:', this.visibleJobs);
+     
+    }
+    this.showLoadMoreButton = endIndex < this.jobs.length;
+  }
+ 
  
 }

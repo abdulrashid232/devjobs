@@ -67,19 +67,19 @@
   padding: 2rem 0rem;
   border-bottom: 1px solid var(--light-gray);
 }
-button{
+/* button{
   margin-top: 2rem;
   padding: 10px 20px;
   background-color: var(--violet);
   color: var(--secondary-color1);
   border: none;
   height: 48px;
-  /* width: 123px; */
+  width: 123px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
-}
+} */
 
 .job-title span,p{
   color:var(--gray);

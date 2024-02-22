@@ -22,4 +22,5 @@ export class JobComponent {
       this.selectedJob = job;
     });
   }
+  buttonColor: string = '#F4F6F8';
 }

@@ -1,7 +1,7 @@
   <div *ngIf="!viewJob">
   <app-search-bar></app-search-bar>
   <div class="grid-container">
-    <div class="grid-item" *ngFor ="let job of jobs" (click)="jobDetails(job)">
+    <div class="grid-item" *ngFor ="let job of visibleJobs" (click)="jobDetails(job)">
       <div class="job-logo" [style.backgroundColor]="job.logoBackground">
         <img src="{{job.logo}}" alt="">
       </div>
@@ -18,8 +18,64 @@
     </div>
 </div>
 <div class="btn">
-  <app-button label="Load More" [ngClass]="loadButton"></app-button>
+  <app-button label="Load More" *ngIf="showLoadMoreButton" (onClick)="loadMore()"></app-button>
 </div>
 </div>
 
-<app-job [jobs]="jobs" *ngIf="viewJob"></app-job>
+<!-- <app-job [jobs]="jobs" *ngIf="viewJob"></app-job> -->
+<div class="container" *ngIf="selectedJob">
+  <div class="job-header">
+    <div class="com-logo" [style.backgroundColor]="selectedJob.logoBackground">
+      <img src="{{selectedJob.logo}}" alt="">
+    </div>
+    <div class="com-details">
+      <div class="com-name">
+        <h2>{{selectedJob.company}}</h2>
+        <p>{{selectedJob.company}}.com</p>
+      </div>
+      <div class="com-website">
+        <button [href]="selectedJob.company">Company Site</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="job-details-container">
+    <div class="singleJob-details">
+     <div class="job-title">
+          <span>{{selectedJob.postedAt}} . {{selectedJob.contract}}</span>
+          <h3>{{selectedJob.position}}</h3>
+          <p class="job-location">{{selectedJob.location}}</p>
+      </div>
+      <button>Apply Now</button>
+  </div>
+    <div class="job-description">
+        <p>{{selectedJob.description}}</p>
+      </div>
+      <div class="requirements">
+        <h3>Requirements</h3>
+        <p class="content">
+          {{selectedJob.requirements.content}}
+        </p>
+        <p class="items"> {{selectedJob.requirements.items}}</p>
+      </div>
+      <div class="role">
+        <h3>What you will do</h3>
+        <p class="content">
+          {{selectedJob.role.content}}
+        </p>
+        <p class="items"> {{selectedJob.role.items}}</p>
+      </div>
+    </div>
+</div>
+<div class="footer" *ngIf="selectedJob">
+  <div class="job-footer">
+    <div class="com-footer-name">
+      <h3>{{selectedJob.position}}</h3>
+      <p>{{selectedJob.company }}</p>
+    </div>
+    <div class="com-footer-website">
+      <button>Apply Now</button>
+    </div>
+  </div>
+      
+  </div>

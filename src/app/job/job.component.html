@@ -9,7 +9,7 @@
         <p>{{selectedJob.company}}.com</p>
       </div>
       <div class="com-website">
-        <button [href]="selectedJob.company">Company Site</button>
+        <app-button label="Company Site"[ngStyle]="{'color': buttonColor}"></app-button>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
           <h3>{{selectedJob.position}}</h3>
           <p class="job-location">{{selectedJob.location}}</p>
       </div>
-      <button>Apply Now</button>
+      <app-button label="Apply Now"></app-button>
   </div>
     <div class="job-description">
         <p>{{selectedJob.description}}</p>
@@ -49,17 +49,8 @@
       <p>{{selectedJob.company }}</p>
     </div>
     <div class="com-footer-website">
-      <button>Apply Now</button>
+      <app-button label="Apply Now"></app-button>
     </div>
   </div>
       
   </div>
-
-  <!-- component2.component.html
-
-<!-- <div *ngIf="selectedJob">
-  <h2>{{ selectedJob.name }}</h2>
-  <p>{{ selectedJob.description }}</p>
-</div>
-<div *ngIf="!selectedJob">
-  <h2>No item selected</h2> -->
