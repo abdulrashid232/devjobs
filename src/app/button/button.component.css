@@ -15,3 +15,6 @@ button{
   justify-content: center;
   white-space: nowrap;
 }
+button:hover{
+  background-color: var(--light-violet);
+}

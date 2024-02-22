@@ -132,7 +132,7 @@
 button{
   margin-top: 2rem;
   padding: 10px 20px;
-  background-color: var(--violet);
+  background-color: var(--gray);
   color: var(--secondary-color1);
   border: none;
   height: 48px;
@@ -141,6 +141,9 @@ button{
   font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
+}
+button:hover{
+  background-color:var(--light-violet);
 }
 
 .job-title span,p{

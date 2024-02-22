@@ -9,7 +9,7 @@
         <p>{{selectedJob.company}}.com</p>
       </div>
       <div class="com-website">
-        <app-button label="Company Site"[ngStyle]="{'color': buttonColor}"></app-button>
+        <button [href]="selectedJob.company">Company Site</button>
       </div>
     </div>
   </div>
