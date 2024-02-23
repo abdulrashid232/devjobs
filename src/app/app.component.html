@@ -1,12 +1,13 @@
-<header>
+
+<header >
   <div class="header-container">
     <div class="logo" (click)="navigateToJobs()">
       <img src="./assets/desktop/logo.svg" alt="logo">
     </div>
-    <div class="theme-container">
+    <div class="theme-container" (change)="toggleTheme()">
         <img src="./assets/desktop/icon-sun.svg" alt="sun-image">
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" >
           <span class="slider round"></span>
         </label>
         <img src="./assets/desktop/icon-moon.svg" alt="moon-image">
@@ -15,6 +16,7 @@
 </header>
 <router-outlet></router-outlet>
 <!-- <app-jobs></app-jobs> -->
+
 
 
 

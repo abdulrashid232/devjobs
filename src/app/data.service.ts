@@ -29,4 +29,11 @@ export class DataService {
   setSelectedJob(job: any): void {
     this.selectedJobSubject.next(job);
   }
+
+  private themeSubject = new BehaviorSubject<boolean>(false);
+  public theme$ = this.themeSubject.asObservable();
+
+  setTheme(isDark: boolean): void {
+    this.themeSubject.next(isDark);
+  }
 }

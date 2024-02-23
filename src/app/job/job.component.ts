@@ -9,9 +9,9 @@ import { DataService } from '../data.service';
 })
 export class JobComponent {
   jobs: any[];
-
-  constructor(private dataService: DataService) {}
   selectedJob: any;
+  constructor(private dataService: DataService) {}
+ 
 
   ngOnInit(): void {
     
@@ -20,6 +20,15 @@ export class JobComponent {
     });
     this.dataService.selectedJob$.subscribe((job) => {
       this.selectedJob = job;
+    });
+
+    this.dataService.theme$.subscribe((isDark: boolean) => {
+    
+      const div = document.querySelectorAll('.darkContainer')
+      div.forEach((item) => {
+        item.classList.toggle('dark-theme', isDark);
+      });
+
     });
   }
   buttonColor: string = '#F4F6F8';

@@ -1,20 +1,20 @@
-<div class="container" *ngIf="selectedJob">
-  <div class="job-header">
+<div class="container" *ngIf="selectedJob" >
+  <div class="job-header darkContainer" >
     <div class="com-logo" [style.backgroundColor]="selectedJob.logoBackground">
       <img src="{{selectedJob.logo}}" alt="">
     </div>
-    <div class="com-details">
+    <div class="com-details" >
       <div class="com-name">
         <h2>{{selectedJob.company}}</h2>
         <p>{{selectedJob.company}}.com</p>
       </div>
       <div class="com-website">
-        <button [href]="selectedJob.company">Company Site</button>
+        <button [href]="selectedJob.company" class="darkContainer">Company Site</button>
       </div>
     </div>
   </div>
   
-  <div class="job-details-container">
+  <div class="job-details-container darkContainer">
     <div class="job-details">
      <div class="job-title">
           <span>{{selectedJob.postedAt}} . {{selectedJob.contract}}</span>
@@ -31,18 +31,26 @@
         <p class="content">
           {{selectedJob.requirements.content}}
         </p>
-        <p class="items"> {{selectedJob.requirements.items}}</p>
+        <div class="items"> 
+          <p *ngFor=" let li of selectedJob.requirements.items">
+            <span>&#x2022;</span>{{ li}}
+          </p>
+        </div>
       </div>
       <div class="role">
         <h3>What you will do</h3>
         <p class="content">
           {{selectedJob.role.content}}
         </p>
-        <p class="items"> {{selectedJob.role.items}}</p>
+        <div class="items"> 
+          <p *ngFor=" let li of selectedJob.role.items; let i = index" >
+            <span>{{i}}</span>{{ li}}
+          </p>
+        </div>
       </div>
     </div>
 </div>
-<div class="footer" *ngIf="selectedJob">
+<div class="footer darkContainer" *ngIf="selectedJob" [class.dark-theme]="dataService.isDarkTheme">
   <div class="job-footer">
     <div class="com-footer-name">
       <h3>{{selectedJob.position}}</h3>

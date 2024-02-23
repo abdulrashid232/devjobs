@@ -166,3 +166,8 @@ button:hover{
   width:60%;
   margin: 10rem auto 0 auto;
 }
+
+.dark-theme{
+  background-color: var(--midnight);
+  color: #fff;
+}

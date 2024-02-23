@@ -10,40 +10,13 @@ import { DataService } from '../data.service';
 export class JobsComponent implements OnInit{
   
   jobs: any[]; 
-  selectedJob: any;
+  // selectedJob: any;
   visibleJobs: any[];
   jobsPerPage: number = 12;
   showLoadMoreButton: boolean = true;
 
   constructor(private router: Router,private dataService: DataService) {}
 
-  // ngOnInit() {
-  //   this.loadJobs();
-  // }
-
-  // loadJobs() {
-  //   fetch('./assets/data.json')
-  //   .then(response => {
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     return response.json();
-  //   })
-  //   .then(jobs => {
-  //     this.jobs = jobs;
-  //   })
-  //   .catch(error => {
-  //     console.error('Error While fetching data:', error);
-  //   });
-  // }
-
- 
-
-  // ngOnInit(): void {
-  //   this.dataService.getData().subscribe((jobs) => {
-  //     this.jobs = jobs;
-  //   });
-  // }
 
 
 
@@ -52,7 +25,17 @@ export class JobsComponent implements OnInit{
       this.jobs = result;
       this.visibleJobs = this.jobs.slice(0, this.jobsPerPage);
     });
-    // this.dataService.setData(this.jobs);
+    this.dataService.setData(this.jobs);
+
+  
+    this.dataService.theme$.subscribe((isDark: boolean) => {
+    
+      let div = document.querySelectorAll('.grid-item')
+      div.forEach((item) => {
+        item.classList.toggle('dark-theme', isDark);
+      });
+
+    });
   }
 
 
@@ -60,13 +43,13 @@ export class JobsComponent implements OnInit{
   viewJob = false
 
   jobDetails( job: any) {
-    // this.router.navigate(['/job']);
+    this.router.navigate(['/job']);
     this.viewJob = true;
-    this.selectedJob = job;
+    // this.selectedJob = job;
 
-    console.log(this.selectedJob);
+    // console.log(this.selectedJob);
 
-    // this.dataService.setSelectedJob(job);
+    this.dataService.setSelectedJob(job);
     // console.log(this.dataService.selectedJob$);
   };
 
@@ -85,6 +68,7 @@ export class JobsComponent implements OnInit{
     }
     this.showLoadMoreButton = endIndex < this.jobs.length;
   }
+  
  
  
 }

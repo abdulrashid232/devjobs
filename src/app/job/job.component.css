@@ -32,7 +32,7 @@
   border-radius: 10px;
 }
 .com-logo{
-  width: 150px;
+  width: 200px;
   height: 100%;
   margin-right: 20px;
   background-color: hsl(36, 87%, 49%);
@@ -67,10 +67,13 @@
   padding: 2rem 0rem;
   border-bottom: 1px solid var(--light-gray);
 }
+p span{
+  margin-right: 2rem;
+}
 button{
   margin-top: 2rem;
   padding: 10px 20px;
-  background-color: var(--gray);
+  background-color: var(--light-gray);
   color: var(--secondary-color1);
   border: none;
   height: 48px;
@@ -103,4 +106,8 @@ button:hover{
   justify-content:space-between;
   width:60%;
   margin: 10rem auto 0 auto;
+}
+.dark-theme{
+  background-color: var(--midnight);
+  color: #fff;
 }

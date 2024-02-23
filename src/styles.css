@@ -3,8 +3,9 @@
   /* Primary colors */
   --violet:#4C54D2;
   --light-violet:#939BF4;
-  --primary-color-darkBlue:#19202D;
+  --primary-color-darkBlue:#6E8098;
   --midnight : #121721;
+  --dark: #0a0a0a;
 
   /* Secondary colors */
   --secondary-color1:#FFFFFF;
@@ -22,4 +23,9 @@ body{
   background-color: var(--light-gray);
 
   
+}
+
+.dark-theme{
+  background-color: var(--dark);
+  color: #fff;
 }
