@@ -63,8 +63,9 @@
   cursor: pointer;
 }
 .check{
-  color: var(--gray) !important;
+
   padding: 100rem 20px !important;
+  accent-color: var(--gray);
 }
 .check-container p{
   display: inline;
@@ -72,3 +73,8 @@
   font-weight: bold;
 }
 
+.dark-theme{
+  background-color: var(--midnight);
+  color: #fff;
+  accent-color: var(--midnight);
+}
