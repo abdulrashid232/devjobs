@@ -74,16 +74,18 @@ export class JobsComponent implements OnInit{
     this.showLoadMoreButton = endIndex < this.jobs.length;
   }
   
+  
 
   onSearch(searchParams: any) {
     const { searchTextCompanies, searchTextLocation, fullTimeOnly } = searchParams;
   
     this.filteredJobs = this.jobs.filter(job => {
-      const companyMatch = searchTextCompanies ? job.company.toLowerCase().includes(searchTextCompanies.toLowerCase()) : true;
+      const companyOrPositionMatch = searchTextCompanies ? job.company.toLowerCase().includes(searchTextCompanies.toLowerCase()) || job.position.toLowerCase().includes(searchTextCompanies.toLowerCase()) : true;
       const locationMatch = searchTextLocation ? job.location.toLowerCase().includes(searchTextLocation.toLowerCase()) : true;
       const fullTimeMatch = !fullTimeOnly || job.contract.toLowerCase() === 'full time';
+
   
-      return companyMatch && locationMatch && fullTimeMatch;
+      return companyOrPositionMatch && locationMatch && fullTimeMatch;
     });
   }
   
