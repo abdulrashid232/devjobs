@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -7,6 +7,20 @@ import { DataService } from '../data.service';
   styleUrl: './search.component.css'
 })
 export class SearchBarComponent implements OnInit{
+
+  searchTextCompanies: string = '';
+  searchTextLocation: string = '';
+  fullTimeOnly: boolean = false;
+
+  @Output() searchClicked: EventEmitter<any> = new EventEmitter();
+
+  onSearch() {
+    this.searchClicked.emit({
+      searchTextCompanies: this.searchTextCompanies,
+      searchTextLocation: this.searchTextLocation,
+      fullTimeOnly: this.fullTimeOnly
+    });
+  }
 
   constructor(private dataService: DataService) {}
 
@@ -20,11 +34,7 @@ export class SearchBarComponent implements OnInit{
 
     });
   }
-  search: string = '';
-  searchJobs() {
-    console.log(this.search);
-  }
-  clearSearch() {
-    this.search = '';
-  }
+
+
+
 }

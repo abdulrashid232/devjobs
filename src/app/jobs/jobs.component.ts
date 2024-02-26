@@ -15,6 +15,9 @@ export class JobsComponent implements OnInit{
   jobsPerPage: number = 12;
   showLoadMoreButton: boolean = true;
 
+  filteredJobs: any[] = [];
+
+
   constructor(private router: Router,private dataService: DataService) {}
 
 
@@ -24,6 +27,8 @@ export class JobsComponent implements OnInit{
     this.dataService.fetchData().subscribe((result) => {
       this.jobs = result;
       this.visibleJobs = this.jobs.slice(0, this.jobsPerPage);
+
+      this.filteredJobs = this.visibleJobs;
     });
     this.dataService.setData(this.jobs);
 
@@ -69,6 +74,20 @@ export class JobsComponent implements OnInit{
     this.showLoadMoreButton = endIndex < this.jobs.length;
   }
   
+
+  onSearch(searchParams: any) {
+    const { searchTextCompanies, searchTextLocation, fullTimeOnly } = searchParams;
+  
+    this.filteredJobs = this.jobs.filter(job => {
+      const companyMatch = searchTextCompanies ? job.company.toLowerCase().includes(searchTextCompanies.toLowerCase()) : true;
+      const locationMatch = searchTextLocation ? job.location.toLowerCase().includes(searchTextLocation.toLowerCase()) : true;
+      const fullTimeMatch = !fullTimeOnly || job.contract.toLowerCase() === 'full time';
+  
+      return companyMatch && locationMatch && fullTimeMatch;
+    });
+  }
+  
+
  
  
 }

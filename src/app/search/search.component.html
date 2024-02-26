@@ -1,17 +1,17 @@
 <div class="search-container darkContainer">
   <div class="input-cont jobTitle" >
     <img src="./assets/desktop/icon-search.svg" alt="">
-    <input type="text" class="darkContainer" placeholder="Filter by title,companies,expertise..">
+    <input type="text" class="darkContainer" [(ngModel)]="searchTextCompanies" placeholder="Filter by title,companies,expertise..">
   </div>
   <div class=" input-cont location">
     <img src="./assets/desktop/icon-location.svg" alt="">
-    <input type="text" class="darkContainer" placeholder="Filter by location...">
+    <input type="text" class="darkContainer" [(ngModel)]="searchTextLocation" placeholder="Filter by location...">
   </div>
   <div class="input-cont full-time">
     <div class="check-container">
-      <input class="check" type="checkbox">
+      <input class="check" type="checkbox" [(ngModel)]="fullTimeOnly">
       <p style="width: 100%;">Full Time Only</p>
     </div>
-    <app-button label="Search"></app-button>
+    <app-button label="Search" (onClick)="onSearch()"></app-button>
   </div>
 </div>
