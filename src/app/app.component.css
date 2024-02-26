@@ -85,7 +85,33 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/* .dark-theme {
-  background-color: #333;
-  color: #fff;
-} */
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  header {
+    height: 140px;
+  }
+
+  .header-container {
+    margin: auto 2rem; 
+    width: 90%;
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 599px) {
+  header {
+    height: 80px; 
+    
+  }
+
+  .header-container {
+    margin: auto 2rem; 
+    width: 95%; 
+  }
+
+  .theme-container {
+    margin-right: 0; 
+  }
+}

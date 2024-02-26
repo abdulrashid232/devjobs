@@ -1,7 +1,7 @@
 .grid-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 20px 20px;
   margin: 5rem 10rem 0 10rem;
   width: 80%;
@@ -184,4 +184,83 @@ button:hover{
   width: 100%;
   height: 100%;
   padding: 0 3rem;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px){
+  .grid-container{
+    display: grid;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 30px;
+    grid-template-rows: 1fr 1fr;
+    margin: 3rem 5rem 0 5rem;
+    width: 100%;
+  }
+  .grid-item{
+    width: 390px;
+    margin: 0 0 0 0;
+  }
+  .job-logo{
+    margin: -3rem 0 0 2rem;
+    width: 50px;
+    height: 50px;
+  }
+  .job-details{
+    margin: 3rem 0 0 2rem;
+  }
+  .job-title span,p{
+    font-size: 0.8rem;
+  }
+  .job-location p{
+    font-size: 0.8rem;
+  }
+  .btn{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn button{
+    padding: 10px 20px;
+    height: 48px;
+    font-size: 0.8rem;
+  }
+  .container{
+    width: 90%;
+    margin: -13rem auto 0 auto;
+  }
+  .job-header{
+    margin: 10rem auto 0 auto;
+    height: 140px;
+  }
+  .com-logo{
+    width: 100px;
+    height: 100%;
+    margin-right: 20px;
+  }
+  .com-logo img{
+    width: 40px;
+    height: 40px;
+  }
+  .com-details{
+    margin-left: 20px;
+    padding-right: 3rem;
+  }
+  .job-details-container{
+    margin-top: 3rem;
+    padding: 0 3rem 3rem 3rem;
+  }
+  .singleJob-details{
+    padding: 2rem 0rem;
+  }
+  .job-footer{
+    width: 90%;
+    margin: 10rem auto 0 auto;
+  }
+  .noJob{
+    margin-top: 10rem;
+    font-size: 1rem;
+  }
 }
