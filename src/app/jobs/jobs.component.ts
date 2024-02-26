@@ -74,7 +74,7 @@ export class JobsComponent implements OnInit{
     this.showLoadMoreButton = endIndex < this.jobs.length;
   }
   
-  
+  noJobsFound = false;
 
   onSearch(searchParams: any) {
     const { searchTextCompanies, searchTextLocation, fullTimeOnly } = searchParams;
@@ -84,6 +84,10 @@ export class JobsComponent implements OnInit{
       const locationMatch = searchTextLocation ? job.location.toLowerCase().includes(searchTextLocation.toLowerCase()) : true;
       const fullTimeMatch = !fullTimeOnly || job.contract.toLowerCase() === 'full time';
 
+      if(this.filteredJobs.length === 0) {
+        console.log('No jobs found');
+        this.noJobsFound = true;
+      }
   
       return companyOrPositionMatch && locationMatch && fullTimeMatch;
     });

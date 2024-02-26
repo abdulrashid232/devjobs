@@ -18,8 +18,12 @@
     </div>
 </div>
 <div class="btn">
-  <app-button label="Load More" *ngIf="showLoadMoreButton" (onClick)="loadMore()"></app-button>
+  <app-button label="Load More" *ngIf="showLoadMoreButton"  (onClick)="loadMore()"></app-button>
 </div>
 </div>
 
 <app-job [jobs]="jobs" *ngIf="viewJob"></app-job>
+
+<div class="noJob" *ngIf="noJobsFound">
+  <h1>No Jobs Found</h1>
+</div>

@@ -171,3 +171,17 @@ button:hover{
   background-color: var(--midnight);
   color: #fff;
 }
+
+.noJob{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  color: var(--gray);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 3rem;
+}
