@@ -105,9 +105,21 @@ button:hover{
   align-items: center;
   justify-content:space-between;
   width:60%;
-  margin: 10rem auto 0 auto;
+  margin: 5rem auto 0 auto;
 }
 .dark-theme{
   background-color: var(--midnight);
   color: #fff;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px){
+  .container{
+    width: 90%;
+  }
+  .job-header{
+    width: 100%;
+  }
+  .job-footer{
+    width: 90%;
+  }
 }
