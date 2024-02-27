@@ -35,7 +35,7 @@
   width: 200px;
   height: 100%;
   margin-right: 20px;
-  background-color: hsl(36, 87%, 49%);
+  /* background-color: hsl(36, 87%, 49%); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,6 +86,26 @@ button{
 button:hover{
   background-color:var(--light-violet);
 }
+.apply{
+    padding: 10px 20px;
+    background-color: var(--violet);
+    color: var(--secondary-color1);
+    border: none;
+    height: 48px;
+    width: 123px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  
+}
+.apply:hover{
+  background-color: var(--light-violet);
+}
 
 .job-title span,p{
   color:var(--gray);
@@ -122,4 +142,95 @@ button:hover{
   .job-footer{
     width: 90%;
   }
+}
+/* Mobile style */
+@media only screen and (max-width: 599px){
+  .container{
+    width: 90%;
+    margin: -5rem auto 0 auto;
+  }
+  .job-header{
+    width: 100%;
+    margin: 4rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 230px;
+  }
+  .com-logo{
+    width: 80px;
+    height: 80px;
+    margin:-7rem auto 0 auto;
+    /* margin-bottom: 1rem; */
+    border-radius: 30px;
+  }
+  .com-details{
+    margin: 1rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    padding: 0;
+    /* margin: 0; */
+    height: 120px;
+  }
+  .com-name{
+    padding-top: 2rem;
+    padding-bottom: 0;
+    height: auto;
+  }
+  .com-website{
+    height: auto;
+    padding: 0 auto 0 auto;
+  }
+  .job-details-container{
+    margin:1rem 0 0 0;
+    padding: 0 1rem 0 1rem;
+  }
+  .job-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  .job-title{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0rem;
+  }
+  .job-footer{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width:100%;
+    margin: 5rem auto 0 auto;
+  }
+  .com-footer-name{
+    display:  none;
+  }
+  .com-footer-website{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .apply{
+    width: 90%;
+    margin: 0 auto;
+    
+  }
+  .applybtn{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+
 }

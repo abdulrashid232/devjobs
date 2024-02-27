@@ -102,13 +102,16 @@ input:checked + .slider:before {
 /* Mobile Styles */
 @media only screen and (max-width: 599px) {
   header {
-    height: 80px; 
+    height: 139px; 
+    width: 100%;
     
   }
 
   .header-container {
-    margin: auto 2rem; 
-    width: 95%; 
+    margin: 0 auto 0 auto; 
+    width: 90%; 
+    height: auto;
+    padding-top: 2rem;
   }
 
   .theme-container {
