@@ -121,6 +121,22 @@ button:hover{
   .check-container p{
     font-size: 0.8rem;
   }
+  button{
+    padding: 10px 20px;
+    background-color: var(--violet);
+    color: var(--secondary-color1);
+    border: none;
+    height: 48px;
+    width: 80px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
 }
 
 /* Mobile style */
