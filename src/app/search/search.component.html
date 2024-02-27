@@ -15,3 +15,31 @@
     <button (click)="onSearch()">Search</button>
   </div>
 </div>
+
+<div class="search-container2 darkContainer2">
+  <div class="input-cont jobTitle" >
+    <input type="text" class="darkContainer2" [(ngModel)]="searchTextCompanies" placeholder="Filter by title,companies,expertise..">
+    <img id="moreFilterBtn" (click)="clickFilter()" src="./assets/mobile/icon-filter.svg" >
+  </div>
+  <div class="searchBtn" (click)="onSearch()">
+    <img src="./assets/mobile/icon-search.svg" alt="">
+  </div>
+</div>
+
+
+<div id="moreFilter" class="moreFilter">
+  <div id="moreFilter-content" class="moreFilter-content">
+    <div class="input-cont2 location">
+      <img src="./assets/desktop/icon-location.svg" alt="">
+      <input type="text" class="darkContainer2" [(ngModel)]="searchTextLocation" placeholder="Filter by location...">
+    </div>
+    <div class="input-cont2 full-time">
+      <div class="check-container">
+        <input class="check" type="checkbox" [(ngModel)]="fullTimeOnly">
+        <p style="width: 100%;">Full Time Only</p>
+      </div>
+      <button (click)="onSearch()">Search</button>
+    </div>
+  </div>
+
+</div>

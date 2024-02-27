@@ -32,7 +32,26 @@ export class SearchBarComponent implements OnInit{
         item.classList.toggle('dark-theme', isDark);
       });
 
+      const mobileDiv = document.querySelectorAll('.darkContainer2')
+      mobileDiv.forEach((item) => {
+        item.classList.toggle('dark-theme', isDark);
+      });
+
     });
+  }
+
+  filter = document.getElementById('moreFilterBtn');
+
+  filterContent: any;
+
+  clickFilter() {
+    this.filterContent = document.getElementById('moreFilter');
+    if (this.filterContent) {
+      this.filterContent.classList.add('show');
+      console.log('Shown');
+    } else {
+      console.error('Element with ID "moreFilter" not found.');
+    }
   }
 
 
