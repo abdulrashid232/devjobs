@@ -1,4 +1,4 @@
-  <div *ngIf="!viewJob">
+  <div *ngIf="!viewJob" class="JobsContainer">
   <app-search-bar (searchClicked)="onSearch($event)"></app-search-bar>
   <div class="grid-container">
     <div class="grid-item" *ngFor ="let job of filteredJobs" (click)="jobDetails(job)">
