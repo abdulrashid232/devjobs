@@ -46,13 +46,10 @@ export class SearchBarComponent implements OnInit{
 
   clickFilter() {
     this.filterContent = document.getElementById('moreFilter');
-    if (this.filterContent) {
       this.filterContent.classList.add('show');
-      console.log('Shown');
-    } else {
-      console.error('Element with ID "moreFilter" not found.');
-    }
   }
+
+
 
 
 
