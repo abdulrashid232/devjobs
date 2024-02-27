@@ -35,8 +35,13 @@ export class JobsComponent implements OnInit{
   
     this.dataService.theme$.subscribe((isDark: boolean) => {
     
-      let div = document.querySelectorAll('.grid-item')
-      div.forEach((item) => {
+      
+      let mainDiv = document.querySelectorAll('.JobsContainer');
+      mainDiv.forEach((item) => {
+        item.classList.toggle('dark-theme', isDark);
+      });
+      let gridDiv = document.querySelectorAll('.grid-item')
+      gridDiv.forEach((item) => {
         item.classList.toggle('dark-theme', isDark);
       });
 
