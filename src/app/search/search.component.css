@@ -63,7 +63,7 @@
 }
 .check-container input[type="checkbox"] {
   transform: scale(2); 
-  background-color:red;
+  accent-color: var(--violet);
 }
 .check-container p{
   display: inline;
@@ -115,7 +115,7 @@ button:hover{
 }
 .moreFilter-content{
   background-color: #fefefe;
-  margin: auto;
+  margin:8rem auto auto auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -214,8 +214,6 @@ button:hover{
   }
   .show{
     display: block;
-    align-items: center;
-    justify-content: center;
   }
 
   .input-cont2{
@@ -254,6 +252,11 @@ button:hover{
   }
   .check-container input[type="checkbox"] {
     transform: scale(2); 
+  }
+  .darkContainer2.dark-theme{
+    background-color: var(--midnight);
+    color: #fff;
+    accent-color: var(--midnight);
   }
  
 }
