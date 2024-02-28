@@ -64,7 +64,7 @@ export class JobsComponent implements OnInit{
   };
 
   loadMore() {
-    const startIndex = this.visibleJobs.length;
+    const startIndex = this.filteredJobs.length;
     const remainingJobs = this.jobs.length - startIndex;
     const endIndex = this.jobsPerPage + remainingJobs;
 
@@ -72,8 +72,8 @@ export class JobsComponent implements OnInit{
     console.log('endIndex:', endIndex);
     
     if (endIndex <= this.jobs.length) {
-      this.visibleJobs = this.visibleJobs.concat(this.jobs.slice(startIndex, endIndex));
-      console.log('Visible Jobs:', this.visibleJobs);
+      this.filteredJobs = this.filteredJobs.concat(this.jobs.slice(startIndex, endIndex));
+      console.log('Visible Jobs:', this.filteredJobs);
      
     }
     this.showLoadMoreButton = endIndex < this.jobs.length;
