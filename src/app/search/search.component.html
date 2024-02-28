@@ -38,7 +38,7 @@
         <input class="check" type="checkbox" [(ngModel)]="fullTimeOnly">
         <p style="width: 100%;">Full Time Only</p>
       </div>
-      <button (click)="onSearch()">Search</button>
+      <button (click)="onSearch(); closeFilter()">Search</button>
     </div>
   </div>
 

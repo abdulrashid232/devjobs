@@ -48,6 +48,10 @@ export class SearchBarComponent implements OnInit{
     this.filterContent = document.getElementById('moreFilter');
       this.filterContent.classList.add('show');
   }
+  closeFilter() {
+    this.filterContent = document.getElementById('moreFilter');
+      this.filterContent.classList.remove('show');
+  }
 
 
 
