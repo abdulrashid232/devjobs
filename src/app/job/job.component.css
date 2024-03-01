@@ -54,6 +54,13 @@
   padding-right: 3rem;
   width: 100%;
 }
+.comSiteBtn.dark-theme{
+  background-color: var(--dark-gray);
+}
+.comSiteBtn.dark-theme:hover{
+  background-color: var(--gray);
+  color: var(--secondary-color1);
+}
 
 .job-details-container{
   margin-top: 3rem;
@@ -114,6 +121,16 @@ button:hover{
  .job-location{
    color: var(--violet);
    font-weight: 600;
+ }
+ .listDiv{
+    display: flex;
+    align-items: center;
+ }
+ .list{
+  margin-right:1rem ;
+  margin-bottom: 0.5rem;
+  color: var(--violet);
+  font-size: bold;
  }
 
  .footer{

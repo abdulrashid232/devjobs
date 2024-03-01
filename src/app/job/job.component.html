@@ -9,7 +9,7 @@
         <p>{{selectedJob.company}}.com</p>
       </div>
       <div class="com-website">
-        <button [href]="selectedJob.company" class="darkContainer">Company Site</button>
+        <button [href]="selectedJob.company" class="darkContainer comSiteBtn">Company Site</button>
       </div>
     </div>
   </div>
@@ -33,9 +33,10 @@
           {{selectedJob.requirements.content}}
         </p>
         <div class="items"> 
-          <p *ngFor=" let li of selectedJob.requirements.items">
-            <span>&#x2022;</span>{{ li}}
-          </p>
+          <div class="listDiv" *ngFor=" let li of selectedJob.requirements.items">
+            <span class="list">&#x2022;</span>
+            <p>{{li}}</p>
+          </div>
         </div>
       </div>
       <div class="role">
@@ -44,9 +45,10 @@
           {{selectedJob.role.content}}
         </p>
         <div class="items"> 
-          <p *ngFor=" let li of selectedJob.role.items; let i = index" >
-            <span>{{i}}</span>{{ li}}
-          </p>
+          <div class="listDiv" *ngFor=" let li of selectedJob.role.items; let i = index">
+            <span class="list">{{i+1}}</span>
+            <p>{{li}}</p>
+          </div>
         </div>
       </div>
     </div>
