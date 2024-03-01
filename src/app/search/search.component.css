@@ -250,9 +250,9 @@ button:hover{
   .input-cont2 button{
    width: 100%;
   }
-  /* .check-container input[type="checkbox"] {
-    transform: scale(2); 
-  } */
+  .check-container input[type="checkbox"] {
+    transform: scale(none); 
+  }
   .darkContainer2.dark-theme{
     background-color: var(--midnight);
     color: #fff;
